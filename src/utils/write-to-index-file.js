@@ -39,4 +39,4 @@ const writeToIndexFile = async (folderName, fileName, indexFile = 'src/component
   return 'Index file updated successfully'
 }
 
-module.exports = writeToIndexFile
+export default writeToIndexFile

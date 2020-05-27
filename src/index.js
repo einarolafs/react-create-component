@@ -1,3 +1,3 @@
-const component = require('./component')
+import component from './component'
 
-module.exports = component
+export default component

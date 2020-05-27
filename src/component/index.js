@@ -1,7 +1,7 @@
-const { toCamelCase } = require('../utils')
+import { toCamelCase } from '../utils'
 
-const createComponent = require('./create-component')
-const deleteComponent = require('./delete-component')
+import createComponent from './create-component'
+import deleteComponent from './delete-component'
 
 const argv = JSON.parse(process.env.npm_config_argv)
 

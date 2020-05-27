@@ -1,5 +1,5 @@
-const fs = require('fs')
-const { promisify } = require('util')
+import fs from 'fs'
+import { promisify } from 'util'
 
 const writeFile = promisify(fs.writeFile)
 const readFile = promisify(fs.readFile)
@@ -56,4 +56,4 @@ const deleteComponent = async ({ directory, componentName }) => {
   return `Successfully removed component ${componentName}`
 }
 
-module.exports = deleteComponent
+export default deleteComponent
