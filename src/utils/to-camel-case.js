@@ -6,4 +6,4 @@ const toCamelCase = (string, firstLowerClass) => string.split('-').reduce((acc, 
   return `${acc}${split[0].toUpperCase()}${split.slice(1)}`
 }, '')
 
-export default toCamelCase
+module.exports = toCamelCase

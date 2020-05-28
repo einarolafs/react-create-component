@@ -1,15 +1,24 @@
-import { toCamelCase } from '../utils'
+const arg = require('arg')
+const { toCamelCase }  = require('../utils')
 
-import createComponent from './create-component'
-import deleteComponent from './delete-component'
+const createComponent  = require('./create-component')
+const deleteComponent  = require('./delete-component')
 
-const argv = JSON.parse(process.env.npm_config_argv)
+const args = arg({
+  // Types
+  '--component': String,
 
-const create = argv.original.indexOf('-c')
-const remove = argv.original.indexOf('-r')
+  // Aliases
+  '-c':        '--component'
+});
 
-if (create >= 0) {
-  const componentFileName = argv.original[create + 1]
+console.log(args)
+
+const create = args['--component']
+const remove = args['-r']
+
+if (create) {
+  const componentFileName = args['--component']
   const componentName = toCamelCase(componentFileName)
   const directory = `./src/components/${componentFileName}`
 
@@ -17,8 +26,8 @@ if (create >= 0) {
     .then(success => console.log(success))
     .catch(error => console.log(error))
 }
-else if (remove >= 0) {
-  const componentFileName = argv.original[remove + 1]
+else if (remove) {
+  const componentFileName = args['-r']
   const componentName = toCamelCase(componentFileName)
   const directory = `./src/components/${componentFileName}`
 

@@ -23,7 +23,7 @@ const convertHTMLAttributes = (content) => {
   return newContent.replace(/( xmlns=")([a-zA-Z0-9:.//]*)(")/gi, '')
 }
 
-export default convertHTMLAttributes
+module.exports = convertHTMLAttributes
 
 'style="enable-background:new 0 0 264 88; color: #FFFFFF"'.match(/\".+?\"/g)[0]
 .replace(/"/g, '')

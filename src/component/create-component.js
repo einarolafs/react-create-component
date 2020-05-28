@@ -1,7 +1,7 @@
-import fs from 'fs'
-import { promisify } from 'util'
+const fs = require('fs')
+const { promisify } = require('util')
 
-import { writeToIndexFile } from '../utils'
+const { writeToIndexFile } = require('../utils')
 
 const writeFile = promisify(fs.writeFile)
 const mkdir = promisify(fs.mkdir)
@@ -112,4 +112,4 @@ const createComponent = async ({ directory, componentFileName, componentName }) 
   return `Successfully created component ${componentName}`
 }
 
-export default createComponent
+module.exports = createComponent

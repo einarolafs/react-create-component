@@ -1,8 +1,8 @@
-import toCamelCase from './to-camel-case'
-import convertHTMLAttributes from './convert-html-attributes'
-import writeToIndexFile from './write-to-index-file.js'
+const toCamelCase = require('./to-camel-case')
+const convertHTMLAttributes = require('./convert-html-attributes')
+const writeToIndexFile = require('./write-to-index-file.js')
 
-export default {
+module.exports = {
   toCamelCase,
   convertHTMLAttributes,
   writeToIndexFile
